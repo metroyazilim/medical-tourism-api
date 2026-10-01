@@ -80,7 +80,9 @@ fi
 if [ -d "$REPO_ROOT/.git" ] || git -C "$REPO_ROOT" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   wt_count="$(git -C "$REPO_ROOT" worktree list 2>/dev/null | wc -l | tr -d ' ')"
   if [ "${wt_count:-1}" -le 1 ]; then ok 'Worktree yok'; else bad 'Worktree yasağı' "$wt_count worktree var"; fi
-  if git -C "$REPO_ROOT" check-ignore -q .serena/cache .serena/logs .playwright-mcp 2>/dev/null; then
+  if git -C "$REPO_ROOT" check-ignore -q .serena/cache 2>/dev/null \
+    && git -C "$REPO_ROOT" check-ignore -q .serena/logs 2>/dev/null \
+    && git -C "$REPO_ROOT" check-ignore -q .playwright-mcp 2>/dev/null; then
     ok 'Serena/Playwright çıktıları .gitignore içinde'
   else
     bad 'Serena/Playwright çıktıları' '.gitignore kayıtları eksik'

@@ -1,8 +1,8 @@
 # Local tool output and caches
-.serena/cache/
-.serena/logs/
+.serena/cache
+.serena/logs
 .serena/project.local.yml
-.playwright-mcp/
+.playwright-mcp
 
 # Local editor and runtime artifacts
 .DS_Store
