@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "laya": {
+      "type": "stdio",
+      "command": "laya-mcp-server",
+      "args": [],
+      "env": { "LAYA_DEVICE": "cpu" }
+    },
+    "serena": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "ide-assistant", "--project-from-cwd", "--open-web-dashboard", "false"]
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@0.0.83", "--browser", "chromium", "--isolated"]
+    }
+  }
+}

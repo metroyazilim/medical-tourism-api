@@ -1,0 +1,15 @@
+# Local tool output and caches
+.serena/cache/
+.serena/logs/
+.serena/project.local.yml
+.playwright-mcp/
+
+# Local editor and runtime artifacts
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+.next/
